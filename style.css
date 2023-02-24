@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --gray: #F3F4F6;
+    --boldgray: #EAECEE;
+    --white: #FFFFFF;
+    --river: #475466;
+    --lightriver: #99A4B4;
+    --blue: #3B82F6;
+    --ogray: rgba(149,160,177,0.1);
+}
+* , html , body {
+    font-family: monospace;
+}
+button {
+    border: none;
+    font-size: 16px;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+}
+button#space-btn {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 0;
+    outline: 0;
+    background: #03001e;
+    background: linear-gradient(80deg, #8cb7f3 0%, #2b77f3 100%);
+    cursor: pointer;
+}
+
+.btn-container {
+    height: 60px;
+    position: relative;
+    overflow: visible;
+}
+
+.btn-container::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 20px;
+    z-index: -1;
+    background: #03001e;
+    background: linear-gradient(80deg, #8cb7f3 0%, #2b77f3 100%);
+    filter: blur(20px);
+    opacity: 0;
+}
+
+.btn-container:hover:after {
+    transition: all 0.6s cubic-bezier(0.15, 0.83, 0.66, 1);
+    opacity: 0.6;
+}
+
+button span {
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+button#space-btn div.star {
+    width: 1px;
+    height: 1px;
+    background-color: white;
+    border-radius: 50%;
+    animation: blink 2s cubic-bezier(0.15, 0.83, 0.66, 1) infinite;
+}
+
+button#space-btn div.shooting-star {
+    width: 80px;
+    height: 1px;
+    position: absolute;
+    background: linear-gradient(80deg, #ffffffff, #ffffff00);
+    border-radius: 50%;
+    transform: rotate(-40deg);
+    opacity: 0
+}
+
+button#space-btn div.shooting-star-1 {
+    animation: fallingStar1 4s 6s cubic-bezier(0.15, 0.83, 0.66, 1) infinite;
+}
+
+button#space-btn div.shooting-star-2 {
+    animation: fallingStar2 2s 10s cubic-bezier(0.15, 0.83, 0.66, 1) infinite;
+}
+
+button#space-btn div.shooting-star-3 {
+    animation: fallingStar3 8s 20s cubic-bezier(0.15, 0.83, 0.66, 1) infinite;
+}
+
+button#space-btn div.shooting-star-4 {
+    animation: fallingStar4 4s 6s cubic-bezier(0.15, 0.83, 0.66, 1) infinite;
+}
+
+@keyframes blink {
+    0% {
+        box-shadow: 0 0 10px 0 white;
+    }
+
+    50% {
+        box-shadow: 0 0 10px 2px white;
+    }
+
+    100% {
+        box-shadow: 0 0 10px 0 white;
+    }
+}
+
+@keyframes fallingStar1 {
+    0% {
+        top: -10px;
+        left: 220px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 200px;
+        left: -20px;
+        opacity: 1;
+    }
+}
+
+@keyframes fallingStar2 {
+    0% {
+        top: -10px;
+        left: 150px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 200px;
+        left: -90px;
+        opacity: 1;
+    }
+}
+
+@keyframes fallingStar3 {
+    0% {
+        top: -10px;
+        left: 80px;
+        opacity: 1
+    }
+
+    100% {
+        top: 200px;
+        left: -160px;
+        opacity: 1
+    }
+}
+
+@keyframes fallingStar4 {
+    0% {
+        top: -10px;
+        left: 0px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 200px;
+        left: -240px;
+        opacity: 1;
+    }
+}
+body {
+    background-color: var(--gray);
+}
+.loader {
+    display: none;
+}
+.loader {
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+  
+  .loader div {
+    position: absolute;
+    border: 4px solid #3B82F6;
+    border-radius: 50%;
+    animation: loader8435 1s ease-out infinite;
+  }
+  
+  .loader div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  
+  @keyframes loader8435 {
+    0% {
+      top: 32px;
+      left: 32px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+  
+    100% {
+      top: 0;
+      left: 0;
+      width: 64px;
+      height: 64px;
+      opacity: 0;
+    }
+  }
+  
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    background-color: var(--white);
+    width: 400px;
+    height: 530px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px 5px var(--boldgray);
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-text {
+    text-align: center;
+    margin-top: 10px;
+    padding: 40px 0;
+}
+.form-text h2 , .form-text p {
+    margin: 7px 0;
+}
+.form-h2 {
+    color: var(--river);
+}
+.form-p {
+    color: var(--lightriver);
+}
+.man {
+    width: 170px;
+}
+.form-field {
+    padding: 20px;
+    margin-top: 20px;
+    height: 100px;
+}
+#username {
+    width: 250px;
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color: var(--ogray);
+    transition: .3s;
+}
+#username:focus {
+    color: var(--river);
+    box-shadow: 0 0 0 7px #3b83f645;
+}
+
+.eror {
+    color: var(--blue);
+    font-weight: bold;
+    margin: 7px 4px;
+}
+
+.form-btn {
+    margin-top: 5px;
+}
+
+.profile-box {
+    width: 56%;
+    height: 490px;
+    border-radius: 20px;
+    background-color: var(--white);
+    box-shadow: 0 0 30px 5px var(--boldgray);
+    z-index: 0;
+}
+.bg-stars {
+    position: relative;
+    background: linear-gradient(80deg, #8cb7f3 0%, #2b77f3 100%);
+    margin-top: 17px;
+    border-radius: 13px;
+    width: 96%;
+    height: 220px;
+    z-index: -1;
+
+}
+@media screen and (max-width: 660px) {
+    .profile-box {
+        width: 89%;
+        height: 600px;
+    }
+    .bg-stars {
+        width: 93%;
+        height: 190px;
+    }
+}
+
+.bg-star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border-radius: 100%;
+    background-color: var(--white);
+    animation: blink 4s cubic-bezier(0.15, 0.83, 0.66, 1) infinite;
+}
+
+.user {
+    display: flex;
+    /* justify-content: space-between; */
+    padding: 0 50px;
+    padding-left: 110px;
+    width: 100%;
+}
+.profile-pic img {
+    border-radius: 50%;
+    border: 7px solid var(--white);
+    width: 170px;
+    margin-top: -50px;
+}
+.user-txt {
+    margin-top: 10px;
+    max-width: 370px;
+}
+.user-txt h2 {
+    color: var(--river);
+    font-size: 30px;
+}
+.user-txt p {
+    color: var(--lightriver);
+    margin-top: 3px;
+    font-size: 20;
+}
+
+.center {
+    display: flex;
+}
+@media screen and (max-width: 710px) {
+    .user {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        text-align: center;
+    }
+    .center {
+        align-items: center;
+        justify-content: center;
+    }
+    .detail{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .user-flw {
+        text-align: center;
+    }
+}
+
+
+
+.locatoin {
+    padding-left: 15px;
+}
+.user-flw {
+    display: flex;
+    margin: 20px 0;
+}
+.user-flw div {
+    padding: 10px;
+    text-align: center;
+}
+
+.detail {
+    display: flex;
+    width: 100%;
+}
+@media screen and (min-width: 711px) {
+    .user-flw {
+        margin-left: 60px;
+    }
+    .user-txt {
+        margin-left: 20px;
+    }
+    .detail {
+        margin-top: 20px;
+        margin-left: 140px;
+    }
+}
+
+.followers , .following {
+    color: var(--river);
+    font-weight: bold;
+} 
+.fols , .folg {
+    color: var(--blue);
+}
+
+.profile {
+    display: none;
+}
