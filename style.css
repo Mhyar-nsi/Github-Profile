@@ -217,7 +217,7 @@ body {
 
 .form-box {
     background-color: var(--white);
-    width: 400px;
+    width: 380px;
     height: 530px;
     border-radius: 20px;
     box-shadow: 0 0 30px 5px var(--boldgray);
