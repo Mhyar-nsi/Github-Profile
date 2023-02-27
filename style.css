@@ -223,6 +223,11 @@ body {
     border-radius: 20px;
     box-shadow: 0 0 30px 5px var(--boldgray);
 }
+@media screen and (max-width: 600px) {
+    .form-box {
+        width: 90%;
+    }
+}
 .column {
     display: flex;
     flex-direction: column;
