@@ -49,7 +49,7 @@ function github(username){
       document.querySelector('#bio').textContent = bio;
 
       const githubUrl = document.querySelector('#github-url');
-      githubUrl.href = 'https://github.com'+jsn.login;
+      githubUrl.href = 'https://github.com/'+jsn.login;
       
 
       profile.style.display = 'flex'
