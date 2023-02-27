@@ -15,6 +15,12 @@
 * , html , body {
     font-family: monospace;
 }
+i {
+    display: flex;
+}
+a {
+    text-decoration: none;
+}
 button {
     border: none;
     font-size: 16px;
@@ -51,11 +57,6 @@ button#space-btn {
     background: linear-gradient(80deg, #8cb7f3 0%, #2b77f3 100%);
     filter: blur(20px);
     opacity: 0;
-}
-
-.btn-container:hover:after {
-    transition: all 0.6s cubic-bezier(0.15, 0.83, 0.66, 1);
-    opacity: 0.6;
 }
 
 button span {
@@ -217,7 +218,7 @@ body {
 
 .form-box {
     background-color: var(--white);
-    width: 350px;
+    width: 400px;
     height: 530px;
     border-radius: 20px;
     box-shadow: 0 0 30px 5px var(--boldgray);
@@ -275,7 +276,7 @@ body {
 
 .profile-box {
     width: 56%;
-    height: 490px;
+    height: 440px;
     border-radius: 20px;
     background-color: var(--white);
     box-shadow: 0 0 30px 5px var(--boldgray);
@@ -311,94 +312,94 @@ body {
     animation: blink 4s cubic-bezier(0.15, 0.83, 0.66, 1) infinite;
 }
 
-.user {
-    display: flex;
-    /* justify-content: space-between; */
-    padding: 0 50px;
-    padding-left: 110px;
+.github-user {
     width: 100%;
 }
-.profile-pic img {
+.row {
+    display: flex;
+}
+.github-section {
+    display: flex;
+}
+.user-info {
+    width: 40%;
+    margin-top: 16px;
+}
+.avatar {
+    margin-top: -40px;
+    margin-left: 75px;
+    width: 170px;
     border-radius: 50%;
     border: 7px solid var(--white);
-    width: 170px;
-    margin-top: -50px;
 }
-.user-txt {
-    margin-top: 10px;
-    max-width: 370px;
+.user-follow {
+    margin-top: 16px;
+    justify-content: center;
+    width: 30%;
 }
-.user-txt h2 {
-    color: var(--river);
-    font-size: 30px;
+.profile-pic {
+    width: 30%;
 }
-.user-txt p {
-    color: var(--lightriver);
-    margin-top: 3px;
-    font-size: 20;
-}
-
-.center {
-    display: flex;
-}
-@media screen and (max-width: 710px) {
-    .user {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        text-align: center;
-    }
-    .center {
-        align-items: center;
-        justify-content: center;
-    }
-    .detail{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .user-flw {
-        text-align: center;
-    }
-}
-
-
-
-.locatoin {
-    padding-left: 15px;
-}
-.user-flw {
-    display: flex;
-    margin: 20px 0;
-}
-.user-flw div {
-    padding: 10px;
-    text-align: center;
-}
-
-.detail {
-    display: flex;
-    width: 100%;
-}
-@media screen and (min-width: 711px) {
-    .user-flw {
-        margin-left: 60px;
-    }
-    .user-txt {
-        margin-left: 20px;
-    }
-    .detail {
-        margin-top: 20px;
-        margin-left: 140px;
-    }
-}
-
-.followers , .following {
-    color: var(--river);
+.name-section h3 {
     font-weight: bold;
-} 
-.fols , .folg {
+    font-size: 30px;
+    color: var(--river);
+    padding-left: 7px;
+}
+.username-section p {
+    color: var(--lightriver);
+    padding: 7px;
+}
+.bio-section p {
+    padding-left: 7px;
+    color: var(--lightriver);
+}
+.user-follow div {
+    padding:0 7px;
+}
+.number {
     color: var(--blue);
+}
+.go-github {
+    margin-top: 15px;
+}
+.go-github button {
+    width: 200px;
+}
+
+@media screen and (max-width: 1400px) {
+    .bg-stars {
+        height: 160px;
+    }
+    .github-section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .profile-pic {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .avatar {
+        margin-top: -40px;
+        margin-left: 0;
+        width: 130px;
+    }
+    .profile-box  {
+        height: 590px;
+    }
+    .user-info {
+        width: 100%;
+    }
+    .bio-section {
+        margin: 10px 0;
+        padding: 0 40px;
+    }
+    .user-follow {
+        margin-bottom: 10px;
+    }
 }
 
 .profile {
