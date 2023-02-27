@@ -4,6 +4,7 @@ const eror = document.querySelector('.eror');
 const formBox = document.querySelector('.form-box');
 const loader =document.querySelector('.loader');
 const profile = document.querySelector('.profile');
+
 gBtn.addEventListener('click' , ()=> {
   const inpt = document.querySelector('#username');
   formBox.style.display = 'none';
@@ -39,15 +40,16 @@ function github(username){
       let followers =  jsn.followers;
       let following = jsn.following;
       let id = `@${jsn.login}`;
-      let location = jsn.location;
 
-      document.querySelector('#pic').src = pic
-      document.querySelector('#fname').textContent = fName
+      document.querySelector('#pic').src = pic;
+      document.querySelector('#fname').textContent = fName;
       document.querySelector('.id').textContent = id;
-      document.querySelector('.locatoin').textContent = location
-      document.querySelector('.fols').textContent = followers
-      document.querySelector('.folg').textContent = following
-      document.querySelector('#bio').textContent = bio
+      document.querySelector('.fols').textContent = followers;
+      document.querySelector('.folg').textContent = following;
+      document.querySelector('#bio').textContent = bio;
+
+      const githubUrl = document.querySelector('#github-url');
+      githubUrl.href = 'https://github.com'+jsn.login;
       
 
       profile.style.display = 'flex'
@@ -62,8 +64,3 @@ function github(username){
   }
   xhr.send();
 }
-
-const spaceBtn = document.querySelector('.btnT');
-spaceBtn.addEventListener('click' , ()=> {
-  window.open('https://github.com/Mhyar-nsi' , '_blank')
-})
